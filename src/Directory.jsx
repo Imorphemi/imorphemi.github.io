@@ -1,15 +1,22 @@
+import './Directory.css'
 
-function Button() {
+function Button({ text, url }) {
     return (
-      <button>Text</button>
+      <a class="dir-button" href={url}><button>{text}</button></a>
     )
   }
 
 function Directory() {  
     return (
       <div>
-        <Button></Button>
-        <Button></Button>
+        <Button
+            text={"Netherdeep"}
+            url={"/netherdeep"}
+        />
+        <Button 
+            text={"Spell Circles"}
+            url={"/spellcircles"}
+        />
       </div>
     )
   }
