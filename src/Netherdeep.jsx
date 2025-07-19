@@ -18,7 +18,9 @@ function Image({url}) {
 
 function GallerySection({folder, images}) {
   return (
-    images.map(image => <Image key={image.filename} url={'./netherdeep/img/'+ folder+ '/' + image.filename} />)
+    images.filter((image) => {return !image.hidden}).map(image => 
+      <Image key={image.filename} url={'./netherdeep/img/'+ folder + '/' + image.filename} />
+    )
   )
 }
 
@@ -28,7 +30,7 @@ function Sidebar() {
       <h1>Netherdeep<br></br>Art Archive</h1>
       <ul>
         {imageList.map(sec => 
-          <a href={"#" + sec.section}><li key={sec.section}>{sec.name}</li></a>
+          <a key={sec.section} href={"#" + sec.section}><li>{sec.name}</li></a>
         )}
       </ul>
     </aside>
