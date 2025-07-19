@@ -25,9 +25,10 @@ function GallerySection({folder, images}) {
 function Sidebar() {
   return (
     <aside id='sidebar'>
+      <h1>Netherdeep<br></br>Art Archive</h1>
       <ul>
         {imageList.map(sec => 
-          <li key={sec.section}><a href={"#" + sec.section}>{sec.name}</a></li>
+          <a href={"#" + sec.section}><li key={sec.section}>{sec.name}</li></a>
         )}
       </ul>
     </aside>
