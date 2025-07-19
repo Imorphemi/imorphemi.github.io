@@ -34,7 +34,7 @@ export const imageList =[{
     }]
 }, {
     section: "sky-cotl",
-    names: "Sky: Children of the Light",
+    name: "Sky: Children of the Light",
     images: [{
         filename: "1.jpg"
     }, {

@@ -5,7 +5,7 @@ import './Netherdeep.css'
 
 const gallery = imageList.map(sec =>
   <div key={sec.section}>
-    <h1>{sec.name}</h1>
+    <h1 id={sec.section}>{sec.name}</h1>
     <GallerySection folder={sec.section} images={sec.images} />
   </div>
 );
