@@ -22,15 +22,27 @@ function GallerySection({folder, images}) {
   )
 }
 
+function Sidebar() {
+  return (
+    <aside id='sidebar'>
+      <ul>
+        {imageList.map(sec => 
+          <li key={sec.section}><a href={"#" + sec.section}>{sec.name}</a></li>
+        )}
+      </ul>
+    </aside>
+  )
+}
 
 function Netherdeep() {  
   return (
     <div>
-      {gallery}
+      <Sidebar />
+      <div id="gallery">{gallery}</div>
     </div>
   )
 }
   
-  createRoot(document.getElementById('root')).render(
-    <Netherdeep />,
-  )
+createRoot(document.getElementById('root')).render(
+  <Netherdeep />,
+)
