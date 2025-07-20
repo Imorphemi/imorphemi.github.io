@@ -1,4 +1,5 @@
 import { createRoot } from 'react-dom/client'
+import { useState } from 'react';
 import { imageList } from './images.js'
 import './Netherdeep.css'
 
@@ -10,9 +11,15 @@ const gallery = imageList.map(sec =>
   </div>
 );
 
+let clickedImageUrl;
+
 function Image({url}) {
+  function imageClicked() {
+    clickedImageUrl = url;
+  }
+
   return (
-    <img className="gallery-img" src={url}></img>
+    <button className="gallery-img-container" onClick={imageClicked}><img className="gallery-img" src={url}></img></button>
   )
 }
 
@@ -45,6 +52,16 @@ function GallerySection({folder, images}) {
   )
 }
 
+function ClickedImage({render, imagePath}) {
+  let rendered = <div></div>;
+  if (render) {
+    rendered = <div id="clicked-image-container"><img id="clicked-image" src={imagePath} /></div>
+  }
+  return (
+    <div>{rendered}</div>
+  )
+}
+
 function Sidebar() {
   return (
     <aside id='sidebar'>
@@ -58,11 +75,23 @@ function Sidebar() {
   )
 }
 
-function Netherdeep() {  
+function Netherdeep() {
+  const [renderPreview, setRenderPreview] = useState(false);
+
+  function handleClick() {
+    
+    setRenderPreview(!renderPreview);
+    console.log(renderPreview);
+  }
+
   return (
     <div>
+      <ClickedImage render={renderPreview} imagePath={'./netherdeep/img/blursties/group10-6.png'} />
       <Sidebar />
-      <div id="gallery">{gallery}</div>
+      <div id="gallery">
+        <button onClick={handleClick}>clockycjdksfk</button>
+        {gallery}
+        </div>
     </div>
   )
 }
