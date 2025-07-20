@@ -1,8 +1,10 @@
 :root {
     font-family: Arial, Helvetica, sans-serif;
+    --white-grey: #dbe1e5;
     --dark-grey: #3c4148;
     --dark-grey-accent-1: #555a60;
     --dark-grey-accent-2: #4b525a;
+    background-color: var(--white-grey);
 }
 
 #sidebar {
@@ -13,7 +15,7 @@
     position: fixed;
     top: 0;
     padding: 15px;
-    color: white;
+    color: var(--white-grey);
 }
 
 #sidebar ul {
@@ -37,10 +39,8 @@
 
 #sidebar a {
     text-decoration: none;
-    color: white;
+    color: var(--white-grey);
 }
-
-
 
 
 #gallery {
