@@ -4,22 +4,17 @@ import { imageList } from './images.js'
 import './Netherdeep.css'
 
 
-const gallery = imageList.map(sec =>
-  <div key={sec.section}>
-    <h1 id={sec.section}>{sec.name}</h1>
-    <GallerySection folder={sec.section} images={sec.images} />
-  </div>
-);
+
 
 let clickedImageUrl;
 
-function Image({url}) {
+function Image({url, previewVisible, onImageClick}) {
   function imageClicked() {
     clickedImageUrl = url;
   }
 
   return (
-    <button className="gallery-img-container" onClick={imageClicked}><img className="gallery-img" src={url}></img></button>
+    <button className="gallery-img-container" onClick={onImageClick}><img className="gallery-img" src={url}></img></button>
   )
 }
 
@@ -32,17 +27,22 @@ function Comic({comic, folder}) {
   )
 }
 
-function GallerySection({folder, images}) {
+function GallerySection({section, previewVisible, onImageClick}) {
   // const shownImages = images.filter((image) => {return !image.hidden});
   let renderedImages = [];
-  for (let image of images) {
+  for (let image of section.images) {
     if (!image.hidden) {
       if (image.filename.endsWith(".png" || ".gif" || ".jpg" || ".jpeg")) {
         renderedImages.push(
-          <Image key={image.filename} url={'./netherdeep/img/'+ folder + '/' + image.filename} />
+          <Image 
+            key={image.filename} 
+            url={'./netherdeep/img/'+ section.sectionFolder + '/' + image.filename} 
+            previewVisible={previewVisible} 
+            onImageClick={onImageClick}
+            />
         );
       } else if (image.filename.startsWith("comic")) {
-        renderedImages.push(<Comic comic={image} folder={folder} />)
+        renderedImages.push(<Comic comic={image} folder={section.sectionFolder} />)
       }
     }
   }
@@ -52,13 +52,13 @@ function GallerySection({folder, images}) {
   )
 }
 
-function ClickedImage({render, imagePath}) {
+function ClickedImage({imagePath, render, onClick}) {
   let rendered = <div></div>;
   if (render) {
-    rendered = <div id="clicked-image-container"><img id="clicked-image" src={imagePath} /></div>
+    rendered = <button id="clicked-image-container" onClick={onClick}><img id="clicked-image" src={imagePath} /></button>
   }
   return (
-    <div>{rendered}</div>
+    <>{rendered}</>
   )
 }
 
@@ -75,24 +75,35 @@ function Sidebar() {
   )
 }
 
-function Netherdeep() {
-  const [renderPreview, setRenderPreview] = useState(false);
 
-  function handleClick() {
-    
-    setRenderPreview(!renderPreview);
-    console.log(renderPreview);
+
+function Netherdeep() {
+  const [previewVisible, setPreviewVisible] = useState(false);
+
+  function imageClicked() {
+    setPreviewVisible(true);
+    console.log(previewVisible);
+  }
+  function previewClicked() {
+    setPreviewVisible(false);
   }
 
+  const gallery = imageList.map(sec =>
+    <div key={sec.sectionFolder}>
+      <h1 id={sec.sectionFolder}>{sec.name}</h1>
+      <GallerySection section={sec} previewVisible={previewVisible} onImageClick={imageClicked} />
+    </div>
+  );
+
   return (
-    <div>
-      <ClickedImage render={renderPreview} imagePath={'./netherdeep/img/blursties/group10-6.png'} />
+    <>
+      
       <Sidebar />
       <div id="gallery">
-        <button onClick={handleClick}>clockycjdksfk</button>
         {gallery}
-        </div>
-    </div>
+      </div>
+      <ClickedImage imagePath={'./netherdeep/img/blursties/group10-6.png'} render={previewVisible} onClick={previewClicked} />
+    </>
   )
 }
   

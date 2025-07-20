@@ -70,10 +70,18 @@
 }
 
 #clicked-image-container {
+    top: 0;
     margin: 0;
-    display: flex;
+    border: 0;
+    display: block;
     place-items: center;
-    min-width: 320px;
+    min-width: 100vw;
     min-height: 100vh;
     background-color: rgba(0,0,0,0.5);
+    position: fixed;
+}
+
+#clicked-image {
+    max-width: 80vw;
+    max-height: 80vh;
 }

@@ -1,6 +1,6 @@
 export const imageList = [
 {
-    section: "pre-campaign",
+    sectionFolder: "pre-campaign",
     name: "Pre-Campaign",
     images: [{
         filename: "artwork-lisaryn-1.png",
@@ -20,7 +20,7 @@ export const imageList = [
     }]
 },
 {
-    section: "session-1-5",
+    sectionFolder: "session-1-5",
     name: "Session 1-5",
     images: [{
         filename: "artwork-lisaryn-3.png",
@@ -88,7 +88,7 @@ export const imageList = [
     }]
 },
 {
-    section: "session-6-10",
+    sectionFolder: "session-6-10",
     name: "Session 6-10",
     images: [{
         filename: "group2-1.png",
@@ -276,7 +276,7 @@ export const imageList = [
     }]
 },
 {
-    section: "session-11-15",
+    sectionFolder: "session-11-15",
     name: "Session 11-15",
     images: [{
         filename: "group4-6.png",
@@ -456,7 +456,7 @@ export const imageList = [
     }]
 },
 {
-    section: "session-16-20",
+    sectionFolder: "session-16-20",
     name: "Session 16-20",
     images: [{
         filename: "artwork-lisaryn-4.png",
@@ -536,7 +536,7 @@ export const imageList = [
     }]
 },
 {
-    section: "session-21-25",
+    sectionFolder: "session-21-25",
     name: "Session 21-25",
     images: [{
         filename: "artwork-realization.png",
@@ -704,7 +704,7 @@ export const imageList = [
     }]
 },
 {
-    section: "session-26-30",
+    sectionFolder: "session-26-30",
     name: "Session 26-30",
     images: [{
         filename: "sketch-dont.png",
@@ -820,7 +820,7 @@ export const imageList = [
     }]
 },
 {
-    section: "session-31-35",
+    sectionFolder: "session-31-35",
     name: "Session 31-35",
     images: [{
         filename: "group13-9.png",
@@ -908,7 +908,7 @@ export const imageList = [
     }]
 },
 {
-    section: "blursties",
+    sectionFolder: "blursties",
     name: "Blursties",
     images: [{
         filename: "group10-6.png",
