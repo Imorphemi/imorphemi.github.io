@@ -16,11 +16,32 @@ function Image({url}) {
   )
 }
 
-function GallerySection({folder, images}) {
-  return (
-    images.filter((image) => {return !image.hidden}).map(image => 
-      <Image key={image.filename} url={'./netherdeep/img/'+ folder + '/' + image.filename} />
+function Comic({comic, folder}) {
+  const rendered = comic.images.map(page => 
+        <Image key={page.filename} url={'./netherdeep/img/'+ folder + '/' + page.filename} />
     )
+  return (
+    <div>{rendered}</div>
+  )
+}
+
+function GallerySection({folder, images}) {
+  // const shownImages = images.filter((image) => {return !image.hidden});
+  let renderedImages = [];
+  for (let image of images) {
+    if (!image.hidden) {
+      if (image.filename.endsWith(".png" || ".gif" || ".jpg" || ".jpeg")) {
+        renderedImages.push(
+          <Image key={image.filename} url={'./netherdeep/img/'+ folder + '/' + image.filename} />
+        );
+      } else if (image.filename.startsWith("comic")) {
+        renderedImages.push(<Comic comic={image} folder={folder} />)
+      }
+    }
+  }
+
+  return (
+    <div>{renderedImages}</div>
   )
 }
 

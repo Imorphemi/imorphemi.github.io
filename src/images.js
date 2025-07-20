@@ -31,20 +31,24 @@ export const imageList = [
         hidden: false
     },
     {
-        filename: "comic-potion-1.png",
-        hidden: false
-    },
-    {
-        filename: "comic-potion-2.png",
-        hidden: false
-    },
-    {
-        filename: "comic-potion-3.png",
-        hidden: false
-    },
-    {
-        filename: "comic-potion-4.png",
-        hidden: false
+        filename: "comic-potion",
+        hidden: false,
+        images: [{
+            filename: "comic-potion-1.png",
+            hidden: false
+        },
+        {
+            filename: "comic-potion-2.png",
+            hidden: false
+        },
+        {
+            filename: "comic-potion-3.png",
+            hidden: false
+        },
+        {
+            filename: "comic-potion-4.png",
+            hidden: false
+        }]
     },
     {
         filename: "sketch-faith.png",
@@ -107,16 +111,20 @@ export const imageList = [
         hidden: false
     },
     {
-        filename: "comic-magic-1.png",
-        hidden: false
-    },
-    {
-        filename: "comic-magic-2.png",
-        hidden: false
-    },
-    {
-        filename: "comic-magic-3.png",
-        hidden: false
+        filename: "comic-magic",
+        hidden: false,
+        images: [{
+            filename: "comic-magic-1.png",
+            hidden: false
+        },
+        {
+            filename: "comic-magic-2.png",
+            hidden: false
+        },
+        {
+            filename: "comic-magic-3.png",
+            hidden: false
+        }]
     },
     {
         filename: "group2-6.png",
@@ -551,20 +559,24 @@ export const imageList = [
         hidden: false
     },
     {
-        filename: "comic-love-1.png",
-        hidden: false
-    },
-    {
-        filename: "comic-love-2.png",
-        hidden: false
-    },
-    {
-        filename: "comic-love-3.png",
-        hidden: false
-    },
-    {
-        filename: "comic-love-4.png",
-        hidden: false
+        filename: "comic-love",
+        hidden: false,
+        images: [{
+            filename: "comic-love-1.png",
+            hidden: false
+        },
+        {
+            filename: "comic-love-2.png",
+            hidden: false
+        },
+        {
+            filename: "comic-love-3.png",
+            hidden: false
+        },
+        {
+            filename: "comic-love-4.png",
+            hidden: false
+        }]
     },
     {
         filename: "group8-7.png",
@@ -703,12 +715,16 @@ export const imageList = [
         hidden: false
     },
     {
-        filename: "comic-harm-1.png",
-        hidden: false
-    },
-    {
-        filename: "comic-harm-2.png",
-        hidden: false
+        filename: "comic-harm",
+        hidden: false,
+        images: [{
+            filename: "comic-harm-1.png",
+            hidden: false
+        },
+        {
+            filename: "comic-harm-2.png",
+            hidden: false
+        }]
     },
     {
         filename: "group12-6.png",
@@ -815,12 +831,16 @@ export const imageList = [
         hidden: false
     },
     {
-        filename: "comic-you-1.png",
-        hidden: false
-    },
-    {
-        filename: "comic-you-2.png",
-        hidden: false
+        filename: "comic-you",
+        hidden: false,
+        images: [{
+            filename: "comic-you-1.png",
+            hidden: false
+        },
+        {
+            filename: "comic-you-2.png",
+            hidden: false
+        }]
     },
     {
         filename: "group9-5.png",
@@ -919,16 +939,20 @@ export const imageList = [
         hidden: false
     },
     {
-        filename: "comic-hollow-1.png",
-        hidden: false
-    },
-    {
-        filename: "comic-hollow-2.png",
-        hidden: false
-    },
-    {
-        filename: "comic-hollow-3.png",
-        hidden: false
+        filename: "comic-hollow",
+        hidden: false,
+        images: [{
+            filename: "comic-hollow-1.png",
+            hidden: false
+        },
+        {
+            filename: "comic-hollow-2.png",
+            hidden: false
+        },
+        {
+            filename: "comic-hollow-3.png",
+            hidden: false
+        }]
     },
     {
         filename: "group11-3.png",
